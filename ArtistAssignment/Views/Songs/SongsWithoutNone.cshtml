@@ -1,0 +1,97 @@
+﻿@model IEnumerable<ArtistAssignment.Models.Song>
+
+@{
+    ViewBag.Title = "Songs";
+}
+
+<div class="Albumsbg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="Albumstitlepage">
+                    <h2>Song</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@using (Html.BeginForm())
+{
+    <p>Find Song: @Html.TextBox("searchString")
+    <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            Artist
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Album.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Youtube)
+        </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Album.Artist.FullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Album.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)
+    </td>
+    
+    @*<td>
+        <a href="#" data-toggle="modal" data-target="#@Html.DisplayFor(modelItem => item.ID)">
+            <img width="50" src="~/img/youtube.jpg" />
+        </a>
+
+        <div id="@Html.DisplayFor(modelItem => item.ID)" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="modal-title">@item.Title</h3>
+                            </div>
+                            <div class="col-md-5">
+                                <h3 class="modal-title text-right">@item.Album.Title</h3>
+
+                            </div>
+                            <div class="col-md-1">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center">
+                        <iframe width="500" height="500" src="@Html.DisplayFor(modelItem => item.Youtube)" frameborder="0" allowfullscreen></iframe>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </td>*@
+    <td>
+        
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) 
+        
+    </td>
+</tr>
+    }
+
+</table>

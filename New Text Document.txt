@@ -1,0 +1,17 @@
+https://go.microsoft.com/fwlink/?LinkId=317598
+https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
+https://www.completecsharptutorial.com/asp-net-mvc5/
+SingleOrDefault vs single
+
+
+1. User made a request through asp.net website.
+2. All the requests reach to controllers. Controller asks models for data.
+3. The model performs database operation and responds controller with data.
+4. Controller gets data from the model.
+5. Controller renders HTML page with model data and creates view page.
+6. Controller response to the user with View Page.
+
+@RenderBody()-->inject content from child page into the master page design
+
+
+add-migrations sdff
